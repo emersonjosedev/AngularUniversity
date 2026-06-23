@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Resultados: {{ country }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Dashboard -->
+  <ion-card color="light">
+    <ion-card-content>
+      <h3>Estatísticas</h3>
+      <p><strong>Total Encontrado:</strong> {{ totalUniversities }}</p>
+      <p><strong>Domínios Únicos:</strong> {{ uniqueDomains }}</p>
+      <p><strong>Seus Favoritos (Geral):</strong> {{ totalFavorites }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Controles: Filtro Local e Ordenação -->
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="8">
+        <ion-item>
+          <ion-label position="floating">Filtrar por nome...</ion-label>
+          <ion-input [(ngModel)]="localSearch" (ionChange)="filterLocal()"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12" size-md="4">
+        <ion-item>
+          <ion-label>Ordem</ion-label>
+          <ion-select [(ngModel)]="sortOrder" (ionChange)="sortData()">
+            <ion-select-option value="asc">A-Z</ion-select-option>
+            <ion-select-option value="desc">Z-A</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Lista de Universidades -->
+  <ion-list>
+    <ion-card *ngFor="let uni of filteredUniversities">
+      <ion-card-header>
+        <ion-card-title>{{ uni.name }}</ion-card-title>
+        <ion-card-subtitle>{{ uni.country }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>Domínio:</strong> {{ uni.domains[0] }}</p>
+        <ion-button fill="outline" target="_blank" [href]="uni.web_pages[0]">
+          Site Oficial
+        </ion-button>
+        <ion-button fill="clear" (click)="toggleFav(uni)">
+          <ion-icon slot="icon-only" [name]="uni.isFavorite ? 'star' : 'star-outline'"></ion-icon>
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+  <div *ngIf="filteredUniversities.length === 0" class="ion-text-center ion-padding">
+    <p>Nenhuma universidade encontrada.</p>
+  </div>
+</ion-content>

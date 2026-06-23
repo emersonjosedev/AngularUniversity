@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Angular University</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/favorites">Favoritos</ion-button>
+      <ion-button routerLink="/about">Sobre</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="search-container">
+    <h2>Catálogo Mundial de Universidades</h2>
+    <p>Digite o nome do país em inglês (ex: Brazil, Canada, Japan)</p>
+    
+    <ion-item>
+      <ion-label position="floating">País</ion-label>
+      <ion-input [(ngModel)]="searchTerm" type="text" placeholder="Ex: Brazil"></ion-input>
+    </ion-item>
+    
+    <ion-button expand="block" class="ion-margin-top" (click)="searchCountry()">
+      Pesquisar
+    </ion-button>
+  </div>
+
+  <ion-list *ngIf="history.length > 0" class="ion-margin-top">
+    <ion-list-header>
+      <ion-label>Histórico de Pesquisa</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let item of history" (click)="searchFromHistory(item.country)" button>
+      <ion-label>
+        <h2>{{ item.country }}</h2>
+        <p>{{ item.date }}</p>
+      </ion-label>
+      <ion-icon name="search-outline" slot="end"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>
