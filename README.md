@@ -22,6 +22,13 @@ Para rodar este projeto na sua máquina, siga os passos abaixo:
 
 5. <img width="1899" height="1015" alt="image" src="https://github.com/user-attachments/assets/ff306b62-a7be-4b89-8c7f-9669a62c7252" />
 
+<img width="1899" height="1015" alt="image" src="https://github.com/user-attachments/assets/19d8f9c5-1652-4b06-bfc2-42546da2f70b" />
+
+<img width="1913" height="952" alt="image" src="https://github.com/user-attachments/assets/03306e65-9788-4128-8d3f-161a069eff18" />
+
+<img width="1920" height="924" alt="image" src="https://github.com/user-attachments/assets/bec17f39-5ad4-4e1f-bb22-5e27f47ac5d0" />
+
+
 
 
 
