@@ -19,6 +19,9 @@ Para rodar este projeto na sua máquina, siga os passos abaixo:
 2. git clone https://github.com/emersonjosedev/AngularUniversity
 3. Instalar depedencias:
 4. npm install
-5. 
+
+5. <img width="1899" height="1015" alt="image" src="https://github.com/user-attachments/assets/ff306b62-a7be-4b89-8c7f-9669a62c7252" />
+
+
 
 
